@@ -1,0 +1,20 @@
+Command list and it's description for the Menu driven Polynomial ADT Program.
+The user has two polynomials to use: poly1 and poly2. The user needs to mention the polynomial to be modified along with the command as mentioned in cmd format.
+There is also a 3rd polynomial: poly3 - It is used for merge command to store the merged polynomial of poly1, poly2 and can only be used through display and change coeff command(only after execution of add-poly / sub-poly cmd).
+
+init - initializes an polynomial.
+format: init poly1
+
+change-coeff - changes the coefiicient of given exponent.
+format: insert poly1
+
+display - displays given polynomial.(does not print anything if all coefficients are 0)
+format: display poly1
+
+add-poly - adds two polynomials, stores result into 3rd polynomial.
+format: add-poly
+
+sub-poly - subtracts two polynomials, stores result into 3rd polynomial.
+format: sub-poly
+
+exit - to exit the program.

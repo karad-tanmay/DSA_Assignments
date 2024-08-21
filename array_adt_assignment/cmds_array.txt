@@ -1,0 +1,32 @@
+Command list and it's description for the Menu driven Array ADT Program.
+The user has two array to use: arr1 and arr2. The user needs to mention the array to be modified along with the command as mentioned in cmd format.
+There is also a 3rd array: arr3 - It is used for merge command to store the merged array of arr1, arr2 and can only be used through all commands except init (only after execution of merge cmd).
+
+init - initializes an array(if called twice for same array, previous array data will be lost).
+format: init arr1
+
+append - add given element to the end of array.
+format: append arr1
+
+insert - adds given element on given index in the array.
+format: insert arr1
+
+remove - removes element from given index.
+format: remove arr1
+
+display - displays elements of given array.
+format: display arr1
+
+max - prints max element of array.
+format: max arr1
+
+min - prints min element of array.
+format: min arr1
+
+reverse - reverses the order of elements of array.
+format: reverse arr1
+
+merge - merges arr1 and arr2 into a arr3.
+format: merge
+
+exit - to exit the program.
