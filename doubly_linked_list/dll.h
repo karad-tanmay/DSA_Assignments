@@ -9,30 +9,32 @@ typedef struct DLL{
     struct node *rear;
 }DLL;
 
-void swap(int *a, int *b);
+void swap(int *a, int *b); //done
 
-void init(DLL *l);
-void isEmpty(DLL l);
-int len(DLL l);
+void init(DLL *l); //done
+int isEmpty(DLL l); //done
+int len(DLL l); //done
 
 // display funcs-
-void display(DLL l);
-void display_list_node(DLL l);
+void display_lr(DLL l); //done
+void display_rl(DLL l); //done
+void display_list_node(DLL l); //done
 void display_node(node n, char *var_name);
 
 // insert funcs-
-void append(DLL *l, int x);
-void insert_at_pos(DLL *l, int x, int index);
-void insert_at_beg(DLL *l, int x);
+void append(DLL *l, int x); //done
+void insert_at_pos(DLL *l, int x, int index); //done
+void insert_at_beg(DLL *l, int x); //done
 
 // remove funcs-
-int remove_at_beg(DLL *l);
-int remove_at_pos(DLL *l, int index);
-int remove_at_end(DLL *l);
+int remove_at_beg(DLL *l); //done
+int remove_at_pos(DLL *l, int index); //done
+int remove_at_end(DLL *l); //done
 
-int lin_search(DLL l, int x);
-void sort_list(DLL *l);
-int isPalindrome(DLL l);
-void remove_dupl(DLL *l);
+int lin_search(DLL l, int x); //done
+void sort_list(DLL *l); //done
+int isPalindrome(DLL l); //done
+void remove_dupl(DLL *l); //done
+void remove_dupl_func(DLL *l); //done
 
-void free_list(DLL *l);
+void free_list(DLL *l); //done

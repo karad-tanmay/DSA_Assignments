@@ -53,6 +53,8 @@ void display_list_node(list l){
 }
 
 void display_node(node n, char *var){
+    if(&n == NULL)
+        return;
     printf("Node %s:\n\tData: %d\n\tCurrent Node address: %p\n\tNext Node Address: %p\n", var, n.data, &n, n.next);
     return;
 }
