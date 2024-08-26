@@ -8,12 +8,12 @@ typedef struct queue{
     node* rear;
 }queue;
 
-void init(queue *q);
-int isEmpty(queue q);
-int len(queue q);
-void enqueue(queue *q, int x);
-int dequeue(queue *q);
-int peekFront(queue q);
-int peekRear(queue q);
-void displayQueue(queue q);
-void clearQueue(queue *q);
+void init(queue *q); //done
+int isEmpty(queue q); //done
+int len(queue q); //done
+void enqueue(queue *q, int x); //done
+int dequeue(queue *q); //done
+int peekFront(queue q); //done
+int peekRear(queue q); //done
+void displayQueue(queue q); //done
+void clearQueue(queue *q); //done

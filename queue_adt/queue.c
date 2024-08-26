@@ -27,11 +27,14 @@ void enqueue(queue *q, int x){
     node *nn = (node *)malloc(sizeof(node));
     nn->data = x;
     nn->next = NULL;
+    if(isEmpty(*q)){
+        q->front = nn;
+        q->rear = nn;
+        return;
+    }
     node *p = q->rear;
     p->next = nn;
     q->rear = nn;
-    if(isEmpty(*q))
-        q->front = nn;
     return;
 }
 
@@ -68,6 +71,7 @@ void displayQueue(queue q){
         printf("%d ", p->data);
         p = p->next;
     }
+    printf("\n");
     return;
 }
 
