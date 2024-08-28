@@ -31,12 +31,36 @@ int len(list l){
     return i;
 }
 
+void display(list l){
+    if(isEmpty(l))
+        return;
+    node *p = l;
+    do{
+        printf("%d ", p->data);
+        p = p->next;
+    }while(p != l);
+    printf("\n");
+    return;
+}
+
+void display_list_node(list l){
+    if(isEmpty(l))
+        return;
+    node *p = l;
+    int i = 0;
+    do{
+        printf("Node %d:\n\tData: %d\n\tCurrent Node address: %p\n\tNext Node Address: %p\n", i, p->data, p, p->next);
+        p = p->next;
+        i++;
+    }while(p != l);
+}
+
 void append(list *l, int x){
     node *nn = (node *)malloc(sizeof(node));
     nn->data = x;
-    nn->next = *l;
     if(isEmpty(*l)){
         *l = nn;
+        nn->next = *l;
         return;
     }
     node *p = *l;
@@ -44,6 +68,23 @@ void append(list *l, int x){
         p = p->next;
     }while(p->next != *l);
     p->next = nn;
+    nn->next = *l;
+    return;
+}
+
+void insert_at_beg(list *l, int x){
+    if(isEmpty(*l)){
+        append(l, x);
+        return;
+    }
+    node *p = *l, *q = *l;
+    while(q->next != *l)
+        q = q->next;
+    node *nn = (node *)malloc(sizeof(node));
+    nn->data = x;
+    nn->next = p->next;
+    *l = nn;
+    q->next->next = *l;
     return;
 }
 
@@ -60,7 +101,10 @@ void insert_at_pos(list *l, int x, int index){
         append(l, x);
         return;
     }
-
+    if(index == 0){
+        insert_at_beg(l, x);
+        return;
+    }
     node *nn = (node *)malloc(sizeof(node));
     nn->data = x;
     nn->next = NULL;
@@ -75,27 +119,19 @@ void insert_at_pos(list *l, int x, int index){
     return;
 }
 
-void insert_at_beg(list *l, int x){
-    if(isEmpty(*l)){
-        append(l, x);
-        return;
-    }
-    node *p = *l;
-    node *nn = (node *)malloc(sizeof(node));
-    nn->data = x;
-    nn->next = p->next;
-    *l = nn;
-    return;
-}
-
 int remove_at_beg(list *l){
     if(isEmpty(*l))
         return INT_MIN;
-    node *p = *l;
+    node *p = *l, *q = *l;
+    do{
+        q = q->next;
+    }while(q->next != *l);
     int temp = p->data;
-    *l = p->next;
     if(len(*l) == 1)
         *l = NULL;
+    else
+        *l = p->next;
+    q->next = *l;
     free(p);
     return temp;
 }
@@ -103,14 +139,17 @@ int remove_at_beg(list *l){
 int remove_at_end(list *l){
     if(isEmpty(*l))
         return INT_MIN;
+    if(len(*l) == 1)
+        return remove_at_beg(l);
     node *p = *l;
+    node *q;
     do{
+        q = p;
         p = p->next;
-    }while(p->next != NULL);
-    node *q = p->next;
-    int temp = q->data;
-    p->next = *l;
-    free(q);
+    }while(p->next != *l);
+    int temp = p->data;
+    q->next = *l;
+    free(p);
     return temp;
 }
 
@@ -120,7 +159,8 @@ int remove_at_pos(list *l, int index){
 
     if(index == len(*l) - 1)
         return remove_at_end(l);
-
+    else if(index == 0)
+        return remove_at_beg(l);
     node *p = *l;
     int i = 0;
     while(i < index - 1){
@@ -148,10 +188,34 @@ int lin_search(list l, int x){
     return -1;
 }
 
-void sort(list *l);
-void remove_dupl(list *l);
+// void sort(list *l);
 
-void merge_list(list l1, list l2, list *l3);
+// void remove_dupl(list *l);
+
+void merge_list(list l1, list l2, list *l3){
+    node *p = l1;
+    do{
+        append(l3, p->data);
+        p = p->next;
+    }while(p != l1);
+    p = l2;
+    do{
+        append(l3, p->data);
+        p = p->next;
+    }while(p != l2);
+    return;
+}
+
+void shift_left(list *l){
+    node *p = *l;
+    int temp = p->data;
+    while(p->next != *l){
+        p->data = p->next->data;
+        p = p->next;
+    }
+    p->data = temp;
+    return;
+}
 
 void free_list(list *l){
     if(isEmpty(*l))
