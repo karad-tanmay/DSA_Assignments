@@ -17,7 +17,9 @@ int main() {
     insert_at_beg(&l, 15);
     display(l);
     insert_at_pos(&l, 33, 7);
-    // printf("%d\n", remove_at_end(&l));
+    display(l);
+    printf("%d\n", remove_at_end(&l));
+    display(l);
     // sort(&l);
     remove_dupl(&l);
     display(l);
@@ -26,6 +28,6 @@ int main() {
 
     // to free allocated memory
     free_list(&l);
-
+    display(l);
     return 0;
 }

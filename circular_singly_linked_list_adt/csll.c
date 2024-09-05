@@ -89,15 +89,19 @@ void insert_at_beg(list *l, int x){
 }
 
 void insert_at_pos(list *l, int x, int index){
+    int lenc = len(*l);
     if(isEmpty(*l) && index == 0){
         append(l, x);
         return;
     }
 
-    if((isEmpty(*l) && index > 0) || index < 0 || index >= len(*l))
+    if(index >= lenc)
+        index = index % lenc;
+
+    if((isEmpty(*l) && index > 0) || index < 0)
         return;
 
-    if(index == len(*l) - 1){
+    if(index == lenc - 1){
         append(l, x);
         return;
     }
