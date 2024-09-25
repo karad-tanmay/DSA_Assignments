@@ -18,7 +18,6 @@ int main(){
     char user_str[MAX_SIZE];
     get_string(user_str);
     int temp = isValidParenthesis(user_str, s);
-    printf("result: %d\n", temp);
     if(temp)
         printf("Valid Parenthesis.\n");
     else

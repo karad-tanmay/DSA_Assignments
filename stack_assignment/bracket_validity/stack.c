@@ -94,5 +94,7 @@ int isValidParenthesis(char *str, stack s){
         }
         i++;
     }
+    if(!isEmpty(s))
+        return 0;
     return 1;
 }
