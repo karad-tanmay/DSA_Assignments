@@ -49,7 +49,7 @@ void mS(int *arr, int low, int high){
     merge(arr, low, mid, high);
 }
 
-// insertion sort
+// merge sort
 void merge_sort(int *arr, int len){
     mS(arr, 0, len - 1);
     return;

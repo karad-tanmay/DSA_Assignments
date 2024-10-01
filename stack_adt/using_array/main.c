@@ -8,7 +8,10 @@ void display(){
 
 int main(){
     stack s;
-    init(&s, 10);
+    int tp;
+    printf("Enter stack size: ");
+    scanf("%d", &tp);
+    init(&s, tp);
 
     int choice, is_on = 1, temp;
     while(is_on){

@@ -206,7 +206,7 @@ float eval_postfix(char *postfix, stack s){
     float num1, num2;
     int i = 0, j = 0;
     char *temp_num = NULL;
-        temp_num = (char*)malloc(15 * sizeof(char));
+    temp_num = (char*)malloc(15 * sizeof(char));
     while(postfix[i] != '\0'){
         if(is_operand(postfix[i])){
             temp_num[j++] = postfix[i];
