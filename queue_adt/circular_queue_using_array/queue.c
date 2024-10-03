@@ -39,7 +39,7 @@ int dequeue(queue *q){
     if(isEmpty(*q))
         return INT_MIN;
     int temp;
-    if(q->front = q->size - 1){
+    if(q->front == q->size - 1){
         temp = q->arr[q->front];
         q->front = 0;
         q->len--;
@@ -67,19 +67,19 @@ int peekRear(queue q){
 }
 
 // got issues to solve with this:
-// void displayQueue(queue q){
-//     if(isEmpty(q))
-//         return;
-//     if(q.rear == 0){
-//         for(int i = q.front; i < q.size; i++)
-//             printf("%d ", q.arr[i]);
-//     }
-//     else{
-//         for(int i = q.front; i < len; i++)
-//             printf("%d ", q.arr[i]);
-//     }
-//     return;
-// }
+void displayQueue(queue q){
+    if(isEmpty(q))
+        return;
+    int i, j = q.front;
+    for(i = 0; i < q.len; i++){
+        if(j == q.size)
+            j = 0;
+        printf("%d ", q.arr[j]);
+        j++; 
+    }
+    printf("\n");
+    return;
+}
 
 void clearQueue(queue *q){
     free(q->arr);
