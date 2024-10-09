@@ -9,6 +9,9 @@ int main(){
     dequeue(&q);
     enqueue(&q, 6);
     displayQueue(q);
+    for(int i = 0; i < 5; i++){
+        printf("%d ", q.arr[i]);
+    }
     printf("PeekFront: %d\n", peekFront(q));
     printf("PeekRear: %d\n", peekRear(q));
     for(int i = 0; i < 6; i++)
