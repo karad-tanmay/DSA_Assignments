@@ -29,6 +29,38 @@ void insertNode(tree *t, int data){
     return;
 }
 
+node* searchNode(tree t, int key){
+    if(t == NULL)
+        return NULL;
+    else{
+        node *p = t;
+        if(p->data == key)
+            return p;
+        else if(key < p->data)
+            return searchNode(p->left, key);
+        else
+            return searchNode(p->right, key);
+    }
+}
+
+node* findMinNode(tree t){
+    if(isEmpty(t))
+        return NULL;
+    if(t->left == NULL)
+        return t;
+    node *p = t;
+    return findMinNode(p->left);
+}
+
+node* findMaxNode(tree t){
+    if(isEmpty(t))
+        return NULL;
+    if(t->right == NULL)
+        return t;
+    node *p = t;
+    return findMaxNode(p->right);
+}
+
 void inorderTraversal(tree t){
     if(t == NULL)
         return;
