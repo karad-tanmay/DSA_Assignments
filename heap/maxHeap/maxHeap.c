@@ -51,8 +51,7 @@ void insert(maxHeap *h, int data){
 int remove_ele(maxHeap *h){
     if(h->rear == -1)
         return INT_MIN;
-    int temp;
-    temp = h->arr[0];
+    int temp = h->arr[0];
     h->arr[0] = h->arr[h->rear];
     h->rear--;
     int i = 0, j = 0, k = 0;
@@ -79,10 +78,56 @@ int remove_ele(maxHeap *h){
     return temp;
 }
 
+void heapSort(maxHeap *h){
+    if(h->rear == -1)
+        return;
+    int temp, j = 0, k = 0, l = 0;
+    for(int i = h->rear; i >= 0; i--){
+        printf("test1, i: %d\n", i);
+        temp = h->arr[0];
+        h->arr[0] = h->arr[i];
+        l = j = k = 0;
+        while(j < i && k < i){
+            j = (2*l) + 1;
+            k = (2*l) + 2;
+            printf("test2, j: %d, k: %d\n", j, k);
+            if(j >= i || k >= i)
+                break;
+            if(h->arr[j] > h->arr[k]){
+                if(h->arr[l] < h->arr[j]){
+                    swap(&h->arr[l], &h->arr[j]);
+                    l = j;
+                }
+                else{
+                    break;
+                }
+            }
+            else{
+                if(h->arr[l] < h->arr[k]){
+                    swap(&h->arr[l], &h->arr[k]);
+                    l = k;
+                }
+                else{
+                    break;
+                }
+            }
+        }
+        h->arr[i] = temp;
+        displayArray(*h);
+    }
+    return;
+}
+
 void deleteHeap(maxHeap *h){
     free(h->arr);
     h->arr = NULL;
     h->size = 0;
     h->rear = -1;
     return;
+}
+
+void displayArray(maxHeap h){
+    for(int i = 0; i <= h.rear; i++)
+        printf("%d ", h.arr[i]);
+    printf("\n");
 }

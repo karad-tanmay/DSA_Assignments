@@ -1,12 +1,6 @@
 #include <stdio.h>
 #include "maxHeap.h"
 
-void displayArray(maxHeap h){
-    for(int i = 0; i <= h.rear; i++)
-        printf("%d ", h.arr[i]);
-    printf("\n");
-}
-
 int main(){
     maxHeap h;
     init(&h, 15);
@@ -19,16 +13,19 @@ int main(){
     insert(&h, 34);
     displayArray(h);
     
-    printf("rmv-ele: %d\n", remove_ele(&h));
-    displayArray(h);
+    // printf("rmv-ele: %d\n", remove_ele(&h));
+    // displayArray(h);
     
-    printf("rmv-ele: %d\n", remove_ele(&h));
-    displayArray(h);
+    // printf("rmv-ele: %d\n", remove_ele(&h));
+    // displayArray(h);
     
-    printf("rmv-ele: %d\n", remove_ele(&h));
-    displayArray(h);
+    // printf("rmv-ele: %d\n", remove_ele(&h));
+    // displayArray(h);
     
-    printf("rmv-ele: %d\n", remove_ele(&h));
+    // printf("rmv-ele: %d\n", remove_ele(&h));
+    // displayArray(h);
+
+    heapSort(&h);
     displayArray(h);
     
     deleteHeap(&h);
