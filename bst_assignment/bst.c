@@ -98,7 +98,7 @@ void inorderTraverse(BST t){
 void postorderTraverse(BST t){
 	stack s;
 	init(&s);
-	nodeBST *p = t, *q;
+	nodeBST *p = t;
 	while(p != NULL || !isEmpty(s)){
 		if(p != NULL){
 			push(&s, p->right);
@@ -108,7 +108,7 @@ void postorderTraverse(BST t){
 		else{
 			p = pop(&s);
 			if(p->right != NULL && p->right == peek(s)){
-				q = pop(&s);
+				pop(&s);
 				push(&s, p);
 				p = p->right;
 			}
@@ -156,6 +156,34 @@ void removeNode(BST *t, char *data){
 	}
 	return;
 }
+
+// iterative destroy tree, needs work
+// void destroyTree(BST *t){
+// 	stack s;
+// 	init(&s);
+// 	nodeBST *p = *t;
+// 	while(p != NULL || !isEmpty(s)){
+// 		if(p != NULL){
+// 			push(&s, p->right);
+// 			push(&s, p);
+// 			p = p->left;
+// 		}
+// 		else{
+// 			p = pop(&s);
+// 			if(p->right != NULL && p->right == peek(s)){
+// 				pop(&s);
+// 				push(&s, p);
+// 				p = p->right;
+// 			}
+// 			else{
+// 				// printf("%s ", p->month);
+// 				free(p);
+// 				p = NULL;
+// 			}
+// 		}
+// 	}
+// 	return;
+// }
 
 void destroyTree(BST *t){
 	if(*t == NULL)

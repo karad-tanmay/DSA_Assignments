@@ -60,5 +60,6 @@ int main(){
 		}
 	}
 	destroyTree(&t);
+	inorderTraverse(t);
 	return 0;
 }
