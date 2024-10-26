@@ -14,10 +14,10 @@
 
 // bst
 typedef struct nodeBST{
-    int month;
-    struct nodeBST *left;
-    struct nodeBST *right; 
-    struct nodeBST *parent;
+	char month[9];
+	struct nodeBST *left;
+	struct nodeBST *right; 
+	struct nodeBST *parent;
 }nodeBST;
 
 typedef nodeBST* BST;
@@ -26,21 +26,21 @@ void initBST(BST *t);
 int BSTHeight(BST t);
 nodeBST* getInPre(BST t);
 nodeBST* getInSucc(BST t);
-void insertNode(BST *t, int data);
-void removeNode(BST *t, int data);
+void insertNode(BST *t, char *data);
+void removeNode(BST *t, char *data);
 void preorderTraverse(BST t);
 void inorderTraverse(BST t);
-// void postorderTraverse(BST t);
+void postorderTraverse(BST t);
 void destroyTree(BST *t);
 
 // stack
 typedef struct node{
-    nodeBST* nodeAdd;
-    struct node* next;
+	nodeBST* nodeAdd;
+	struct node* next;
 }node;
 
 typedef struct stack{
-    struct node* top;
+	struct node* top;
 }stack;
 
 void init(stack *s);
