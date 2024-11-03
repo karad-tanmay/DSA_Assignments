@@ -3,7 +3,7 @@
 
 int main(){
     bst t;
-    init(&t, 7);
+    init(&t, 15);
     insert(&t, 10, 0);
     insert(&t, 12, 0);
     insert(&t, 8, 0);
@@ -21,6 +21,11 @@ int main(){
     printf("\n");
     postorder_traversal(t, 0);
     printf("\n");
+    printf("leaf nodes: %d", countLeaf(t, 0, 0));
+    printf("\n");
+    printf("non leaf nodes: %d", countNonLeaf(t, 0, 0));
+    printf("\n");
+    printf("Height: %d\n", heightBST(t, 0));
     destroyBST(&t);
     printf("test0");
     return 0;
