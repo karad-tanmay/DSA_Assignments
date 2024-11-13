@@ -1,5 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+void display_arr(int *arr, int len){
+    for(int i = 0; i < len; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+    return;
+}
 
 void swap(int *a, int *b){
     int temp = *a;
@@ -8,12 +14,6 @@ void swap(int *a, int *b){
     return;
 }
 
-void display_arr(int *arr, int len){
-    for(int i = 0; i < len; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
-    return;
-}
 
 // bubble sort
 void bubble_sort(int *arr, int len){
