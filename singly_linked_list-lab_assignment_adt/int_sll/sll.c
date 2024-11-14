@@ -52,8 +52,8 @@ void display_list_node(list l){
 }
 
 void display_node(node n, char *var){
-    if(&n == NULL)
-        return;
+    // if(&n == NULL)
+    //     return;
     printf("Node %s:\n\tData: %d\n\tCurrent Node address: %p\n\tNext Node Address: %p\n", var, n.data, &n, n.next);
     return;
 }
@@ -85,8 +85,12 @@ void insert_at_pos(list *l, int x, int index){
         insert_at_beg(l, x);
         return;
     }
-    if(index < 0 || index >= len(*l))
+    if(index < 0 || index > len(*l))
         return;
+    if(index == len(*l)){
+        append(l, x);
+        return;
+    }
     node *nn = (node *)malloc(sizeof(node));
     nn->data = x;
     nn->next = NULL;
