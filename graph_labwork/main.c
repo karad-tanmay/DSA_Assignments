@@ -16,9 +16,9 @@ int main(){
     insertUndirectedEdge(&g, 'e', 'i', 3);
     insertUndirectedEdge(&g, 'g', 'f', 4);
 
-    graphBFS(g, 'i');
+    graphBFS(g, 'g');
     printf("\n");
-    graphDFS(g, 'i');
+    graphDFS(g, 'f');
     printf("\n");
 
     displayGraph(g);
