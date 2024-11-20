@@ -19,6 +19,7 @@ int lenQueue(queue q){
 
 void enqueue(queue *q, int x){
     push(&(q->s1), x);
+    return;
 }
 
 int dequeue(queue *q){

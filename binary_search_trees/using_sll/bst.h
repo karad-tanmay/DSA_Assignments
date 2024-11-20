@@ -30,4 +30,4 @@ void destroyBST(BST *t);
  * inorderSuccessor - leftmost child of the right child of root node.
  * (here root node refers to the node to be deleted)
  * 
-*/
+ */

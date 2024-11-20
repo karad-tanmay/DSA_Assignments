@@ -22,33 +22,24 @@ int isFull(queue q){
 void enqueue(queue *q, int x){
     if(isFull(*q))
         return;
-    if(q->rear == q->size - 1){
-        q->arr[q->rear] = x;
+    q->arr[q->rear] = x;
+    q->len++;
+    if(q->rear == q->size - 1)
         q->rear = 0;
-        q->len++;
-    }
-    else{
-        q->arr[q->rear] = x;
+    else
         q->rear++;
-        q->len++;
-    }
     return;
 }
 
 int dequeue(queue *q){
     if(isEmpty(*q))
         return INT_MIN;
-    int temp;
-    if(q->front == q->size - 1){
-        temp = q->arr[q->front];
+    int temp = q->arr[q->front];
+    q->len--;
+    if(q->front == q->size - 1)
         q->front = 0;
-        q->len--;
-    }
-    else{
-        temp = q->arr[q->front];
+    else
         q->front++;
-        q->len--;
-    }
     return temp;
 }
 

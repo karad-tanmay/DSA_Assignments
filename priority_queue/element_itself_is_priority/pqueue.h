@@ -3,7 +3,7 @@
 // ie. insertion in same order as input(irrespective of priority)
 // and deletion will be as per priority (find min val, remove it) (also FIFO is followed incase of elements with equal priority)
 
-// there is also other methoda (opposite of this) (not used here tho)
+// there is also other methods (opposite of this) (not used here tho)
 // insertion : O(n) (in sorted order)
 // deletion : O(1) (direct removal of 1st/ nth element as per sorting order)
 

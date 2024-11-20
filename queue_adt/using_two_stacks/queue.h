@@ -1,4 +1,4 @@
-#include "stack.h"
+#include "stack.c"
 
 typedef struct queue{
     stack s1;

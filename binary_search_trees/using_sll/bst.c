@@ -78,7 +78,7 @@ void deleteNode(BST *t, int key){
     node *p = *t, *q;
     if(p->data > key)
         deleteNode(&p->left, key);
-    else if(p->data < key)  
+    else if(p->data < key)
         deleteNode(&p->right, key);
     else{
         if(BSTHeight(p->left) > BSTHeight(p->right)){
