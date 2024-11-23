@@ -57,17 +57,16 @@ int peekRear(queue q){
     return q.arr[q.rear - 1];
 }
 
-// got issues to solve with this:
 void displayQueue(queue q){
     if(isEmpty(q))
         return;
-    int i, j = q.front;
-    for(i = 0; i < q.len; i++){
-        if(j == q.size)
-            j = 0;
-        printf("%d ", q.arr[j]);
-        j++; 
-    }
+    int i = q.front;
+    do{
+        if(i == q.size)
+            i = 0;
+        printf("%d ", q.arr[i]);
+        i++;
+    }while(i != q.rear);
     printf("\n");
     return;
 }

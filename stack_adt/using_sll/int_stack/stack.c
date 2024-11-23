@@ -25,13 +25,7 @@ int len(stack s){
 void push(stack *s, int x){
     node *nn = (node *)malloc(sizeof(node));
     nn->data = x;
-    nn->next = NULL;
-    if(isEmpty(*s)){
-        s->top = nn;
-        return;
-    }
-    node *p = s->top;
-    nn->next = p;
+    nn->next = s->top;
     s->top = nn;
     return;
 }
