@@ -1,7 +1,8 @@
-typedef struct bst{
+typedef struct bst
+{
     int size;
     int *a;
-}bst;
+} bst;
 
 void init(bst *t, int size);
 void insert(bst *t, int data, int i);

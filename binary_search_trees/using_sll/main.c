@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "bst.h"
 
-int main(){
+int main()
+{
     BST t = NULL;
     node *p, *q, *r = NULL;
     insertNode(&t, 10);
@@ -23,7 +24,8 @@ int main(){
     printf("max: %d\n", p->data);
     q = findMinNode(t);
     printf("min: %d\n", q->data);
-    if(r != NULL){
+    if (r != NULL)
+    {
         r = searchNode(t, 15);
         printf("Search 15: %d\n", r->data);
     }

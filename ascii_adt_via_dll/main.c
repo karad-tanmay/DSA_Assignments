@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "ascii_adt.h"
 
-int main(){
+int main()
+{
     char ch;
     scanf("%c", &ch);
     DLL l;

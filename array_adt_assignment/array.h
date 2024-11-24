@@ -1,14 +1,15 @@
 // Definition of the array structure
-typedef struct array{
-    int *A;       // Pointer to the dynamically allocated array
-    int length;   // Number of elements currently in the array
-    int size;     // Maximum capacity of the array
-}array;
+typedef struct array
+{
+    int *A;     // Pointer to the dynamically allocated array
+    int length; // Number of elements currently in the array
+    int size;   // Maximum capacity of the array
+} array;
 
 // Function prototypes
 
 // Function to initialize an array with a given size
-array* init(array *a, int size);
+array *init(array *a, int size);
 
 // Function to append an element at the end of the array
 void append(array *a, int x);
@@ -32,4 +33,4 @@ int min(array a);
 void reverse(array *a);
 
 // Function to merge two arrays into a new array
-array* merge(array a, array b);
+array *merge(array a, array b);
