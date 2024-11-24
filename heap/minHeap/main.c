@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include "maxHeap.c"
+#include "minHeap.c"
 
 int main(){
-    maxHeap h;
-    init(&h, 15);
+    minHeap h;
+    initHeap(&h, 15);
     insert(&h, 15);
     insert(&h, 12);
     insert(&h, 19);
@@ -11,11 +11,12 @@ int main(){
     insert(&h, 9);
     insert(&h, 2);
     insert(&h, 34);
-    displayArray(h);
-
+    displayHeap(h);
+    printf("\n");
+    
     // printf("rmv-ele: %d\n", remove_ele(&h));
     // displayArray(h);
-
+    
     // printf("rmv-ele: %d\n", remove_ele(&h));
     // displayArray(h);
     
@@ -26,8 +27,8 @@ int main(){
     // displayArray(h);
 
     heapSort(&h);
-    displayArray(h);
-
+    displayHeap(h);
+    
     deleteHeap(&h);
     printf("test0");
     return 0;

@@ -21,7 +21,7 @@ void init(maxHeap *h, int size){
     return;
 }
 
-int getParentIndex(maxHeap h, int i){
+int getParentIndex(int i){
     if(i == 0)
         return 0;
     if(i % 2 == 1)
@@ -31,13 +31,13 @@ int getParentIndex(maxHeap h, int i){
 }
 
 void insert(maxHeap *h, int data){
-    if(h->rear >= h->size)
+    if(h->rear >= h->size - 1)
         return;
     h->rear++;
     h->arr[h->rear] = data;
     int i = h->rear, j;
     while(i > 0){
-        j = getParentIndex(*h, i);
+        j = getParentIndex(i);
         if(h->arr[i] > h->arr[j]){
             swap(&h->arr[i], &h->arr[j]);
             i = j;

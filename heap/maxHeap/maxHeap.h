@@ -5,7 +5,7 @@ typedef struct maxHeap{
 } maxHeap;
 
 void init(maxHeap *h, int size);
-int getParentIndex(maxHeap h, int i);
+int getParentIndex(int i);
 void insert(maxHeap *h, int data);
 int remove_ele(maxHeap *h);
 void heapSort(maxHeap *h);
