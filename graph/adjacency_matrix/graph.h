@@ -12,3 +12,8 @@ void graphBFS(graph g, int start);
 void graphDFS(graph g, int start);
 void displayGraph(graph g);
 void deleteGraph(graph *g);
+
+// Prim's Algo for MST
+int minWeight(int *weight, int *visited, graph g);
+void printPrims(int *parent, int *weight, graph g);
+void prims(graph g, int start);
