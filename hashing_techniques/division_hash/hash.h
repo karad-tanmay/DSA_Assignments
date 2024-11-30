@@ -4,7 +4,7 @@ typedef struct hashTable{
 }hashTable;
 
 void init(hashTable *h, int size);
-int hash(int key);
+int hash(int key, int size);
 void insertKey(hashTable *h, int key);
 int searchKey(hashTable h, int key);
 void removeKey(hashTable *h, int key);

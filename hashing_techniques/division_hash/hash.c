@@ -11,31 +11,31 @@ void init(hashTable *h, int size){
     return;
 }
 
-int hash(int key){
-    if(key >= 0)
-        return key;
-    return 0;
+int hash(int key, int size){
+    if(key < 0)
+        key *= -1;
+    return key % size;
 }
 
 void insertKey(hashTable *h, int key){
     if(key >= h->size)
         return;
-    h->arr[hash(key)] = key;
+    h->arr[hash(key, h->size)] = key;
     return;
 }
 
 int searchKey(hashTable h, int key){
     if(key >= h.size)
         return -1;
-    if(h.arr[hash(key)] == key)
-        return hash(key);
+    if(h.arr[hash(key, h.size)] == key)
+        return hash(key, h.size);
     return -1;
 }
 
 void removeKey(hashTable *h, int key){
     if(key >= h->size)
         return;
-    h->arr[hash(key)] = INT_MIN;
+    h->arr[hash(key, h->size)] = 0;
     return;
 }
 

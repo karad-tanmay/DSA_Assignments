@@ -42,7 +42,6 @@ int searchKey(hashTable h, int key){
     return -1;
 }
 
-// needs to be checked
 void removeKey(hashTable *h, int key){
     int index = hash(key, h->size);
     node *p = h->ht[index], *q;
